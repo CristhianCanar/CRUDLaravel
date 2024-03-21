@@ -26,8 +26,8 @@ class ProductoController extends Controller
         return redirect(route('productos'));
     }
     public function editar($id){
-
-        $producto = Producto::find($id);
+        // Para ustedes: 
+        $producto = Producto::where('id_producto',$id)->first();
         return view('productos.editar', ['producto' => $producto]);
     }
 
